@@ -19,10 +19,10 @@ def check_syntax(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             code = f.read()
-        compile(code, file_path, "exec")  # Check all syntax errors
+        compile(code, file_path, "exec")  # This checks all syntax errors
     except SyntaxError as e:
         errors.append(f"{file_path}: {e}")
-    except Exception as e:  # catches file reading issues
+    except Exception as e:  # Catches file reading issues
         errors.append(f"{file_path}: {e}")
     return errors
 
