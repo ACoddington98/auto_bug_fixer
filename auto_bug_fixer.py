@@ -35,6 +35,7 @@ def scan_folder(folder_path):
         for file in files:
             if file.endswith(".py"):
                 file_path = os.path.join(root, file)
+                print("Scanning:", file_path)
                 errors = check_syntax(file_path)
                 all_errors.extend(errors)
     return all_errors
